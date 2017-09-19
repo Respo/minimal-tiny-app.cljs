@@ -1,0 +1,17 @@
+{
+  "name": "minimal-tiny-app",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "jiyinyiyong",
+  "license": "MIT",
+  "scripts": {
+    "html": "cp assets/index.html target/",
+    "watch": "shadow-cljs watch app",
+    "serve": "http-server target",
+    "dev": "yarn html && yarn serve"
+  },
+  "devDependencies": {
+    "http-server": "^0.10.0",
+    "shadow-cljs": "^0.18.7"
+  }
+}

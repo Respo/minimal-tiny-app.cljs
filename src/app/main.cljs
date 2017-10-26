@@ -1,13 +1,11 @@
 
 (ns app.main
-  (:require-macros [tiny-app.core :refer [create-tiny-app->]]
-                   [respo.macros :refer [defcomp <> div span button]])
-  (:require [respo.core]
-            [respo.cursor]))
+  (:require [respo.macros :refer [defcomp <> div span button]]
+            [tiny-app.core :refer [create-tiny-app->]]))
 
 ; need to require respo.core and respo.cursor since code in Macros need them
 
-(def store {:count 0})
+(def store {:count 0, :states 0})
 
 (defn updater [store op op-data]
   (case op

@@ -3,7 +3,7 @@
   (:require [respo.macros :refer [defcomp <> div span button]]
             [tiny-app.core :refer [create-tiny-app->]]))
 
-(def store {:count 0, :states 0})
+(def store {:count 0, :states {}})
 
 (defn updater [store op op-data]
   (case op

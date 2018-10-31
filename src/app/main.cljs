@@ -1,7 +1,7 @@
 
 (ns app.main
-  (:require [respo.macros :refer [defcomp <> div span button]]
-            [tiny-app.core :refer [create-tiny-app->]]))
+  (:require [respo.core :refer [defcomp <> div span button]]
+            [tiny-app.core :refer [create-app->]]))
 
 (def store {:count 0, :states {}})
 
@@ -26,7 +26,7 @@
     (<> (:count store))))
 
 (def app
-  (create-tiny-app->
+  (create-app->
     {:model store
      :updater updater
      :view comp-container
@@ -34,6 +34,5 @@
      :ssr? false
      :show-ops? true}))
 
+(def main! (:init! app))
 (def reload! (:reload! app))
-
-(set! (.-onload js/window) (:start-app! app))
